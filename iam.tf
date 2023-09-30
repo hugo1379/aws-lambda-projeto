@@ -29,21 +29,21 @@ data "aws_iam_policy_document" "perm_lambda_s3_cloudwatch" {
       "logs:CreateLogStream"
     ]
 
-    resources = ["arn:aws:logs:*:*:*"]
+    resources = ["*"]
   }
 
   statement {
     effect  = "Allow"
     actions = ["s3:GetObject"]
 
-    resources = ["arn:aws:s3:::*/*"]
+    resources = ["*"]
   }
 
   statement {
     effect  = "Allow"
     actions = ["s3:PutObject"]
 
-    resources = ["arn:aws:s3:::*/*"]
+    resources = ["*"]
   }
 
 }
