@@ -48,13 +48,13 @@ data "aws_iam_policy_document" "perm_lambda_s3_cloudwatch" {
 
 }
 
-resource "aws_iam_policy" "perm_lambda_s3_cloudwatch" {
-  name        = "perm-lambda-s3-cloudwatch"
+resource "aws_iam_policy" "policy_lambda_s3_cloudwatch" {
+  name        = "policy-lambda-s3-cloudwatch"
   path        = "/"
   policy      = data.aws_iam_policy_document.perm_lambda_s3_cloudwatch.json
 }
 
 resource "aws_iam_role_policy_attachment" "lambda_s3_cw" {
   role       = aws_iam_role.role_assume_lambda.name
-  policy_arn = aws_iam_policy.perm_lambda_s3_cloudwatch.arn
+  policy_arn = aws_iam_policy.policy_lambda_s3_cloudwatch.arn
 }
