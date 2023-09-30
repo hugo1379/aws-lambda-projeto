@@ -12,7 +12,7 @@ resource "aws_lambda_function" "lambda_function" {
 
   source_code_hash = data.archive_file.python_lambda_package.output_base64sha256
 
-  runtime = "python3.6"
+  runtime = "python3.9"
 }
 
 resource "aws_lambda_permission" "allow_bucket" {
