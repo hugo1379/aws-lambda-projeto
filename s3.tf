@@ -1,10 +1,10 @@
 resource "aws_s3_bucket" "bucket_input" {
-  bucket = "bucket-input"
+  bucket = "bucket-input-hugo"
 
 }
 
 resource "aws_s3_bucket" "bucket_output" {
-  bucket = "bucket-output"
+  bucket = "bucket-output-hugo"
 }
 
 resource "aws_s3_bucket_notification" "bucket_input_notification" {
